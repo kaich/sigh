@@ -104,9 +104,12 @@ module Sigh
     # Create a new profile and return it
     def create_profile!
       bundle_id = Sigh.config[:app_identifier]
-      name ="xiaoming123"
+      name = Sigh.config[:provisioning_name]
+      if !name
+        name = Sigh.config[:app_identifier].gsub '.' ,''
+      end
 
-      UI.important "Creating new provisioning profile for '#{Sigh.config[:app_identifier]}' with name '#{Sigh.config[:app_identifier]}'"
+      UI.important "Creating new provisioning profile for '#{Sigh.config[:app_identifier]}' with name '#{name}'"
       profile = profile_type.create!(name: name,
                                     bundle_id: bundle_id)
       profile
