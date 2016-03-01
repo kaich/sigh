@@ -12,7 +12,7 @@ module Sigh
                                              title: "Summary for sigh #{Sigh::VERSION}")
 
       UI.message "Starting login with user '#{Sigh.config[:username]}'"
-      Spaceship.login(Sigh.config[:username], nil)
+      Spaceship.login(Sigh.config[:username], Sigh.config[:password])
       Spaceship.select_team
       UI.message "Successfully logged in"
       Spaceship.
