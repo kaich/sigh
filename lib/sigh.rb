@@ -1,5 +1,4 @@
 require 'sigh/version'
-require 'sigh/resign'
 require 'sigh/manager'
 require 'sigh/options'
 
