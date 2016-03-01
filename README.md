@@ -86,6 +86,7 @@ See ```sigh``` in action:
 **Note**: It is recommended to use [match](https://github.com/fastlane/match) according to the [codesigning.guide](https://codesigning.guide) for generating and maintaining your provisioning profiles. Use `sigh` directly only if you want full control over what's going on and know more about codesigning.
 
 	gem install specific_install
+	sudo gem specific_install https://github.com/kaich/spaceship.git
     gem specific_install https://github.com/kaich/sigh.git
 
 Make sure, you have the latest version of the Xcode command line tools installed:
