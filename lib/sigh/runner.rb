@@ -15,12 +15,14 @@ module Sigh
       Spaceship.login(Sigh.config[:username], nil)
       Spaceship.select_team
       UI.message "Successfully logged in"
+      Spaceship.
 
       profiles = [] if Sigh.config[:skip_fetch_profiles]
       profiles ||= fetch_profiles # download the profile if it's there
-
-
-      puts "-------------------------filterd : #{profiles}"
+    
+      if Sigh.config[:device_id] && Sigh.config[:device_name]
+        Spaceship.device.create!(name: Sigh.config[:device_name]  ,udid: Sigh.config[:device_id] )
+      end 
 
       if profiles.count > 0
         UI.success "Found #{profiles.count} matching profile(s)"

@@ -56,6 +56,18 @@ module Sigh
                                      verify_block: proc do |value|
                                        ENV["FASTLANE_TEAM_NAME"] = value
                                      end),
+        FastlaneCore::ConfigItem.new(key: :device_id,
+                                     short_option: "-U",
+                                     env_name: "SIGH_DEVICE_ID",
+                                     description: "The ID of your device",
+                                     optional: true,
+                                     ),
+        FastlaneCore::ConfigItem.new(key: :device_name,
+                                     short_option: "-N",
+                                     env_name: "SIGH_DEVICE_NAME",
+                                     description: "The name of your device",
+                                     optional: true,
+                                     ),
         FastlaneCore::ConfigItem.new(key: :provisioning_name,
                                      short_option: "-n",
                                      env_name: "SIGH_PROVISIONING_PROFILE_NAME",
