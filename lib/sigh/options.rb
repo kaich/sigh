@@ -89,7 +89,7 @@ module Sigh
                                      env_name: "SIGH_OUTPUT_PATH",
                                      description: "Directory in which the profile should be stored",
                                      default_value: "."),
-        FastlaneCore::ConfigItem.new(key: :cert_id,
+        FastlaneCore::ConfigItem.new(key: :signing_identity,
                                      short_option: "-i",
                                      env_name: "SIGH_CERTIFICATE_ID",
                                      description: "The ID of the code signing certificate to use (e.g. 78ADL6LVAA) ",
